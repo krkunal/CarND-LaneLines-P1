@@ -21,7 +21,8 @@ The goals / steps of this project are the following:
 [Image_3]: ./test_images_output/solidYellowLeft.jpg "Test Image 3"
 [Image_4]: ./test_images_output/solidWhiteRight.jpg "Test Image 4"
 [Image_5]: ./test_images_output/solidYellowCurve2.jpg "Test Image 5"
-[Image_6]: ./test_images_output/WhiteCarLaneSwitch.jpg "Test Image 6"
+[Image_6]: ./test_images_output/whiteCarLaneSwitch.jpg "Test Image 6"
+
 ---
 
 ### Reflection
