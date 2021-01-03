@@ -51,11 +51,22 @@ Following are some test images whem passed through this pipeline:
 
 
 Some of the shortcomings are - 
+
 1.) The Color masking is dependent on the assumption that the lane colors will be white & yellow. It might not work on faded lane markers. Also, it might lead to some issues when a white or yellow vehicle is ahead of the vehicle in the same lane. But, this step has helped me in getting a descent performance on the challenge video. Without this step, the model was performing poorly on the challenge video. 
+
 2.) There is some issue in the lane line extrapolation that I did using the OpenCV FindContours & Fitline methods. Sometimes the extrapolated lane lines oscillate wildly this is because of the varying slope for various contour lines in the running video frame. Some implementation that can ignore small changes in the slope might help controlling the oscillations of the extrapolated lines.
+
+3.) Besides, this solution might not work as well in case of images in adverse weather conditions; e.g. raining, snowing etc. Also, this solution has not been validated upon night time images, which might be difficult to process due to poor lighting conditions.
+
+4.) The pipeline has also not be optimized from the perspective of response time i.e. the time taken to process the images.
 
 
 ## 3. Suggest possible improvements to your pipeline
 
 1.) One improvement might be to help control the oscillations of the expolated lane lines. Some implementation that can ignore small changes in the slope might help controlling the oscillations of the extrapolated lines.
+
 2.) Another improvement can be to remove the color mask and find some hyperparameter setting for Gaussian blurring, Canny, and Hough transform that can help getting better and stable performance in various scenarios.
+
+3.) The solution needs to be improved further to handle different scenarios like rainy/snowy weather, night time images etc.
+
+4.) The solution can be optimized to improve the overall response time. 
