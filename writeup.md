@@ -65,7 +65,7 @@ Some of the shortcomings are -
 
 1.) One improvement might be to help control the oscillations of the expolated lane lines. Some implementation that can ignore small changes in the slope might help controlling the oscillations of the extrapolated lines.
 
-2.) Another improvement can be to remove the color mask and find some hyperparameter setting for Gaussian blurring, Canny, and Hough transform that can help getting better and stable performance in various scenarios.
+2.) Since the color mask heavily relies on lane marker colors, it might fail if the markers are faded. Hence, another improvement can be to remove the color mask and find some hyperparameter setting for Gaussian blurring, Canny, and Hough transform that can help getting better and stable performance in various scenarios.
 
 3.) The solution needs to be improved further to handle different scenarios like rainy/snowy weather, night time images etc.
 
