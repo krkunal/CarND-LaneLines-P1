@@ -25,9 +25,9 @@ The goals / steps of this project are the following:
 
 ---
 
-### Reflection
+## **Reflection**
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+## 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 9 steps. I've first masked the image based on lane colors; viz. yellow and white. This step helped identify the desired pixels to a great extent. Then I defined the region of interest rectangle consisting of the bottom 1/3rd of the image and masked the rest of the area above the horizon. Then I converted the image to Gray scale and then applied Gaussian blur with kernel size 5 to achieve smooth edges. Then the Canny transform was applied and the output of it was fed to the Hough transform to get the Hough lines. Almost all of the hyperparamter tuning was confined to the Gaussian blurring, Canny, and Hough stages. Then I applied median blurring with a kernel size of 11 to average out the marked pixels which in some cases were showing multiple lines for each of the lane line in the region of interest.    
 
@@ -47,7 +47,7 @@ Following are some test images whem passed through this pipeline:
 
 ![Test Image 6][Image_6]
 
-### 2. Identify potential shortcomings with your current pipeline
+## 2. Identify potential shortcomings with your current pipeline
 
 
 Some of the shortcomings are - 
@@ -55,7 +55,7 @@ Some of the shortcomings are -
 2.) There is some issue in the lane line extrapolation that I did using the OpenCV FindContours & Fitline methods. Sometimes the extrapolated lane lines oscillate wildly this is because of the varying slope for various contour lines in the running video frame. Some implementation that can ignore small changes in the slope might help controlling the oscillations of the extrapolated lines.
 
 
-### 3. Suggest possible improvements to your pipeline
+## 3. Suggest possible improvements to your pipeline
 
 1.) One improvement might be to help control the oscillations of the expolated lane lines. Some implementation that can ignore small changes in the slope might help controlling the oscillations of the extrapolated lines.
 2.) Another improvement can be to remove the color mask and find some hyperparameter setting for Gaussian blurring, Canny, and Hough transform that can help getting better and stable performance in various scenarios.
